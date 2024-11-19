@@ -27,18 +27,18 @@ function Navbar({ grouping, sorting, onGroupingChange, onSortingChange }) {
       {isDropdownOpen && (
         <div className="dropdown">
           <div className="dropdown-section">
-            <label>Grouping</label>
+            <label className='a'>Grouping</label>
             <select 
               value={grouping} 
               onChange={(e) => handleGroupingChange(e.target.value)}
             >
-              <option value="status">Status</option>
+              <option value="status" >Status</option>
               <option value="user">User</option>
               <option value="priority">Priority</option>
             </select>
           </div>
           <div className="dropdown-section">
-            <label>Ordering</label>
+            <label className='a'>Ordering</label>
             <select 
               value={sorting} 
               onChange={(e) => handleSortingChange(e.target.value)}

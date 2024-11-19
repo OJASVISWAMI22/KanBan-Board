@@ -4,7 +4,7 @@ import high from '../assets/highpriority.svg';
 import medium from '../assets/mediumpriority.svg';
 import low from '../assets/lowpriority.svg';
 import no from '../assets/nopriority.svg';
-import menu from '../assets/3dotmenu.svg';
+import dot from '../assets/greydot.png';
 import backlog from '../assets/Backlog.svg';
 import done from '../assets/Done.svg';
 import todo from '../assets/To-do.svg';
@@ -60,12 +60,18 @@ function Card({ ticket, users, grouping }) {
         <p>{ticket.title}</p>
       </div>
       <div className="card-footer">
-        <div className="priority-icon">{grouping !== 'priority' && getPriorityIcon()}</div>
+      {grouping !== 'priority' && (
+          <div className="tag">
+            <div className="priority-icon">
+              {getPriorityIcon()}
+            </div>
+          </div>
+        )}
         <div className="tag-container">
           {ticket.tag.map((tag, index) => (
             <div key={index} className="tag">
-              <img src={menu} />
-              {tag}
+            <img src={dot} className='b'></img>
+            {tag}
             </div>
           ))}
         </div>
